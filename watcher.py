@@ -29,9 +29,6 @@ def ValidInterface():
 	avail = False
 	wlan = stores.args.interface
 	if stores.args.verbose: print 'Looking for: ' + wlan
-	if not "mon" in wlan:
-		print 'You must select a monitor interface (ie. mon0, mon1, etc).'
-		return
 	if stores.args.verbose: print 'Verifying wireless interface is available...'
 	s=cli.execute_shell('ifconfig | grep ' + wlan)
 	lines = s.splitlines()
